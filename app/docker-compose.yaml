@@ -29,7 +29,7 @@ services:
       environment:
        - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
        - ALLOW_PLAINTEXT_LISTENER=yes
-       - KAFKA_HEAP_OPTS=-Xmx1
+       - KAFKA_HEAP_OPTS=-Xmx1G
 
 
    # Server service  
@@ -58,4 +58,3 @@ services:
       depends_on:
         - producer
 
-#git remote add origin https://github.com/Patnamaravind/rep01.git

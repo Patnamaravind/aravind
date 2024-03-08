@@ -38,7 +38,7 @@ function handleProfilePhotoUpload() {
     };
 
     fileInput.click();
-}
+}  
 
 
 document.addEventListener('DOMContentLoaded', function() {

@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = '/adminpage';
     }
 });
+
+
 // Fetch device data on button click
 $(document).ready(function () {
     $("#submit").on("click", function (event) {
@@ -90,6 +92,7 @@ let nav = document.querySelector(".navcontainer");
 menuicn.addEventListener("click", () => {
     nav.classList.toggle("navclose");
 });
+
 // Function to handle user logout
 function logout() {
     localStorage.removeItem("access_token");

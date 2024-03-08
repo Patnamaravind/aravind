@@ -1,20 +1,13 @@
 if (localStorage.getItem("access_token") === null) {
     window.location.href= "/login";
 }
+
+
 if (sessionStorage.getItem("role")!=="admin"){
     alert("only admin can change")
     window.location.href= "/Dashboard";
 }
 
-
-if (sessionStorage.getItem("role") === "user") {
-<<<<<<< HEAD
-    alert("Only Admin can change")
-    window.location.href = "/Dashboard";
-=======
-    window.location.href = "/login";
->>>>>>> d29e972 (eight commit)
-}
 
 document.addEventListener("DOMContentLoaded", function () {
     $(document).ready(function () {
@@ -61,5 +54,4 @@ function logout() {
     sessionStorage.removeItem("role");
     window.location.href= "/";
         // You can add more cleanup here if needed
-    }
-    
+}
