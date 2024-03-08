@@ -1,15 +1,19 @@
 if (localStorage.getItem("access_token") === null) {
     window.location.href= "/login";
 }
+
+
 $(document).ready(function(){
     $("#username").text(` ${sessionStorage.getItem("username")}`);
     $("#email").text(`Email: ${sessionStorage.getItem("email")}`);
     $("#role").text(`role: ${sessionStorage.getItem("role")}`);
 });
 
+
 if (localStorage.getItem("access_token") === null) {
     window.location.href = "/login";
 }
+
 
 function handleProfilePhotoUpload() {
     const fileInput = document.createElement('input');
@@ -35,6 +39,7 @@ function handleProfilePhotoUpload() {
 
     fileInput.click();
 }
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const profileImage = document.getElementById('profileImage');

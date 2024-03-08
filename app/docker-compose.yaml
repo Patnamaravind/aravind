@@ -1,17 +1,15 @@
 version: '3'
 
 services:
-<<<<<<< HEAD
+
   scmxpert: #app
     image: psaravind321/scmxpert:latest
     ports:
       - "8000:8000"
-=======
     scmxpert:
      image: psaravind321/scmxpert:latest
      ports:
        - "8000:8000"
->>>>>>> master1
 
     zookeeper:
       image: 'bitnami/zookeeper:latest'
@@ -31,67 +29,33 @@ services:
       environment:
        - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
        - ALLOW_PLAINTEXT_LISTENER=yes
-       - KAFKA_HEAP_OPTS=-Xmx1G
+       - KAFKA_HEAP_OPTS=-Xmx1
 
-<<<<<<< HEAD
- 
-  kafka:
-    image: 'bitnami/kafka:latest'
-    ports:
-      - "9092:9092"
-    depends_on:
-      - zookeeper
-    environment:
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
-      - ALLOW_PLAINTEXT_LISTENER=yes
-      - KAFKA_HEAP_OPTS=-Xmx1G
 
-  # Server service
-  server:
-    image: psaravind321/server:latest  
-    ports:
-      - "12345:12345"
-    depends_on:
-      - kafka
-
-  # Producer service
-  producer:
-    image: psaravind321/producer:latest  # Use custom producer app image from Docker Hub
-    environment:
-      - bootstrap_servers=kafka:9092
-      - host=server
-    depends_on:
-      - server
-      - kafka
-
-  # Consumer service
-  consumer:
-    image: psaravind321/consumer:latest  # Use custom consumer app image from Docker Hub
-    environment:
-      - bootstrap_servers=kafka:9092
-    depends_on:
-      - producer
-=======
+   # Server service  
     server:
-     image: psaravind321/server:latest
-     ports:
-       - "12345:12345"
-     depends_on:
-       - kafka
+      image: psaravind321/server:latest  
+      ports:
+        - "12345:12345"
+      depends_on:
+        - kafka
 
+    # Producer service
     producer:
-     image: psaravind321/producer:latest
-     environment:
-       - bootstrap_servers=kafka:9092
-       - host=server
-     depends_on:
-       - server
+      image: psaravind321/producer:latest  # Use custom producer app image from Docker Hub
+      environment:
+        - bootstrap_servers=kafka:9092
+        - host=server
+      depends_on:
+        - server
+        - kafka
 
+    # Consumer service
     consumer:
-     image: psaravind321/consumer:latest
-     environment:
-       - bootstrap_servers=kafka:9092
-     depends_on:
-       - producer
-                                
->>>>>>> master1
+      image: psaravind321/consumer:latest  # Use custom consumer app image from Docker Hub
+      environment:
+        - bootstrap_servers=kafka:9092
+      depends_on:
+        - producer
+
+#git remote add origin https://github.com/Patnamaravind/rep01.git

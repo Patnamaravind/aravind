@@ -34,7 +34,6 @@ function authenticate(form) {
 // Event listener for login form submission
 document.getElementById("submit1").addEventListener("click", function(event) {
     event.preventDefault(); // Prevent form submission
-
     // Get user input
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
