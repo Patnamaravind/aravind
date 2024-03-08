@@ -47,3 +47,4 @@ console.log("logined",form.get("confirm"))
     // Call the authenticate function with user input
     authenticate(form);
 });
+satisfies
